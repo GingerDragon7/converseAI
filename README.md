@@ -9,12 +9,12 @@ A web application that uses OpenAI's ChatGPT to generate responses based on user
 
 
 ## Features
-- User-friendly interface for making requests to the OpenAI API
-- Responses are displayed in a chat-like format
-- Powerful model: "gpt-3.5-turbo"
-- Code Assistance
-- Creative Writing
-- Highlight code syntax
+- 🧮 User-friendly interface for making requests to the OpenAI API
+- ❄  Responses are displayed in a chat-like format
+- 🌐 Powerful model: "gpt-3.5-turbo"
+- 📦 Code Assistance
+- 📝 Creative Writing
+- 📦 Highlight code syntax
 
 ## Technologies Used
 - For client, I have used Vanilla Javascript.
