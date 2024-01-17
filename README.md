@@ -17,7 +17,7 @@ A web application that uses OpenAI's ChatGPT to generate responses based on user
 - Highlight code syntax
 
 ## Technologies Used
-- For client, I haven't used Vanilla Javascript.
+- For client, I have used Vanilla Javascript.
 - For server, I used node js and express.
 
 
