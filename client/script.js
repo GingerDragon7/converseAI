@@ -3,6 +3,7 @@ import user from "./assets/user.svg";
 
 const form = document.querySelector("form");
 const chatContainer = document.querySelector("#chat_container");
+const downArrow = document.querySelector("#downArrow");
 
 let loadInterval;
 
@@ -21,6 +22,7 @@ function typeText(element, text) {
   let interval = setInterval(() => {
     if (index < text.length) {
       element.innerHTML += text.charAt(index);
+      scrollToBottom();
       index++;
     } else {
       clearInterval(interval);
@@ -51,6 +53,19 @@ function chatStripe(isAi, value, uniqueId) {
   `;
 }
 
+const scrollToBottom = () =>{
+  (chatContainer.scrollTop = chatContainer.scrollHeight);
+  displayDownArrow();
+}
+
+const displayDownArrow = () => {
+  if (chatContainer.scrollHeight > screen.height) {
+    downArrow.classList.remove("hidden-display");
+  } else {
+    downArrow.classList.add("hidden-display");
+  }
+};
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -63,7 +78,7 @@ const handleSubmit = async (e) => {
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
-  chatContainer.scrollTop = chatContainer.scrollHeight;
+  scrollToBottom();
   const messageDiv = document.getElementById(uniqueId);
   loader(messageDiv);
 
