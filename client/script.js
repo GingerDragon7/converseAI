@@ -21,6 +21,7 @@ function typeText(element, text) {
   let interval = setInterval(() => {
     if (index < text.length) {
       element.innerHTML += text.charAt(index);
+      scrollToBottom();
       index++;
     } else {
       clearInterval(interval);
@@ -51,6 +52,11 @@ function chatStripe(isAi, value, uniqueId) {
   `;
 }
 
+const scrollToBottom = () =>{
+  (chatContainer.scrollTop = chatContainer.scrollHeight);
+}
+
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -63,7 +69,7 @@ const handleSubmit = async (e) => {
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
-  chatContainer.scrollTop = chatContainer.scrollHeight;
+  scrollToBottom();
   const messageDiv = document.getElementById(uniqueId);
   loader(messageDiv);
 
